@@ -69,9 +69,10 @@ d.info()
 class GalaBacklane(Bird):
     species = "Галапагосский баклан"
 
-    def __init__(self, name, id, age, population):
+    def __init__(self, name, id, age, population, color):
         super().__init__(name, id, age)
         self.__population = population
+        self.color = color
 
     @property
     def population(self):
@@ -81,13 +82,19 @@ class GalaBacklane(Bird):
     def population(self, population):
         self.__population = population
 
+    def color(self):
+        return self.color
+
     def info(self):
         super().info()
         print("Вид: " + GalaBacklane.species)
         print("Количество особей: " + str(self.__population))
 
-g = GalaBacklane("galaBacklane1", 22, 2, 60)
+
+g = GalaBacklane("galaBacklane1", 22, 2, 60, "green")
 g.info()
+
+
 #
 # # 5.2.Cоздайте репозиторий на Github и отправте файл с домашним заданием в этот
 # # удаленный репозиторийhis is a sample Python script.
